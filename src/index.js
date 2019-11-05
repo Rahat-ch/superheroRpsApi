@@ -3,21 +3,12 @@ import express from "express";
 import mongoose from "mongoose";
 require("dotenv").config();
 
+import typeDefs from "./typeDefs";
+import resolvers from "./resolvers";
+
 const app = express();
 
-// mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true });
-
-const typeDefs = gql`
-  type Query {
-    hello: String!
-  }
-`;
-
-const resolvers = {
-  Query: {
-    hello: () => "Hello World"
-  }
-};
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true });
 
 const server = new ApolloServer({
   typeDefs,
