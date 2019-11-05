@@ -1,4 +1,4 @@
-#Superhero RPS API
+## Superhero RPS API
 
 Backend for a SuperHero "Rock, Paper, Scissors" game.
 
